@@ -1,9 +1,84 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Zomato app</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato - Discover the best food and drinks</title>
+ <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+ <!-- Latest compiled JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+<style type="text/css">
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  height: 45px;
+  width: 20%;
+  padding: 10px;
+  background:#E23744;
+  color: white;
+  font-size: 17px;
+  border: 1px solid#E23744;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#header{
+    background-image: url(img/header_bg.jpg);
+    min-height: 500px;
+    background-repeat: no-repeat;
+}
+#logo_div{
+    margin-top:100px;
+}
+#logo_div img{
+    max-width:400px;
+}
+#search_form{
+    margin-top:40px!important;
+}
+</style>
+</head>
 <body>
-<h2 style="text-align:center">Zomato App</h2>
+<div id="header" class="container-fluid">
+<div class="row">
+<div id="logo_div">
+<img class="img-responsive center-block" src="img/logo.png"/>
+</div>
+<div id="search" class="row">
+<!-- The form -->
+<form id="search_form" style="margin:auto;max-width:600px; padding:0px 35px;" class="example" action="">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+</div>
+</div>
+</div>
+    
 </body>
 </html>
