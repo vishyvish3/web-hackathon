@@ -48,7 +48,7 @@ form.example input[type=text] {
       text-align: center;
       box-shadow: 0 1px 4px 2px #ccc;
       padding: 20px;
-      
+      min-height: 370px;
   }
   .title{
       font-size:16px;
@@ -60,4 +60,11 @@ form.example input[type=text] {
   }
   #search_listing{
       padding-bottom: 30px;
+  }
+  #search_listing .btn-primary{
+      margin-top:20px
+  }
+  .search-header{
+    margin-top:20px;
+    text-align: center;
   }
