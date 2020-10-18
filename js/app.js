@@ -53,7 +53,7 @@
     postData('https://developers.zomato.com/api/v2.1/search?q='+search+'&count=100&lat='+lat+'&lon='+long)
       .then(data => {
         fullData = data;
-        console.log(data); 
+        //console.log(data); 
         let row = document.querySelector('#search_listing');
         row.innerHTML = '';
         let h3 = document.createElement("h2");
@@ -61,6 +61,8 @@
         h3.innerHTML = "Search Result";
         row.append(h3);
 
+        //if the search keyword has results
+        if(data['results_shown'] > 0){
         for(i=0; i < data['restaurants'].length; i++){
             let col = document.createElement("div");
             col.setAttribute("class","col-md-3");
@@ -106,12 +108,26 @@
     
             row.append(col);
          }
-        
+      }else{
+        let row = document.querySelector('#search_listing');
+        row.innerHTML = '';
+
+        let h2 = document.createElement("h2");
+        h2.setAttribute("class","search-header")
+        h2.innerHTML = "Search Result";
+
+        let h3 = document.createElement("h3");
+        h3.setAttribute("style","text-align:center; color:brown")
+        h3.innerHTML = "Sorry no results found !!";
+
+        row.append(h2, h3);
+      }
+
       });
       
     }
 function moreInfo(id){
-    let name, image, cost, phone;
+    var name, image, cost, phone, address, timings;
     //alert(id);
     console.log(fullData);
     for(i=0; i < fullData['restaurants'].length; i++){
@@ -120,14 +136,17 @@ function moreInfo(id){
             image = fullData['restaurants'][i]['restaurant']['featured_image'];
             cost = fullData['restaurants'][i]['restaurant']['average_cost_for_two'];
             phone = fullData['restaurants'][i]['restaurant']['phone_numbers']; 
+            address = fullData['restaurants'][i]['restaurant']['location']['address']
+            timings = fullData['restaurants'][i]['restaurant']['timings'];
             break;
         }
     }
     document.getElementById("modal-title").innerHTML = name;
-    document.getElementById("featured_img").setAttribute("src",fullData['restaurants'][i]['restaurant']['featured_image'])
-    document.getElementById("modal-address").innerHTML = fullData['restaurants'][i]['restaurant']['location']['address']
-    document.getElementById("modal-phone").innerHTML = fullData['restaurants'][i]['restaurant']['phone_numbers'];
-    document.getElementById("modal-timings").innerHTML = fullData['restaurants'][i]['restaurant']['timings']; 
+    document.getElementById("featured_img").setAttribute("src", image)
+    document.getElementById("modal-address").innerHTML = address
+    document.getElementById("modal-phone").innerHTML = phone;
+    document.getElementById("modal-timings").innerHTML = timings; 
+    document.getElementById("modal-cost").innerHTML = `Rs.${cost}`; 
     $('#myModal').modal('show');
 }
     

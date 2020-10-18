@@ -20,10 +20,7 @@ form.example input[type=text] {
     cursor: pointer;
   }
   
-  form.example button:hover {
-    background: #0b7dda;
-  }
-  
+
   form.example::after {
     content: "";
     clear: both;
@@ -62,9 +59,12 @@ form.example input[type=text] {
       padding-bottom: 30px;
   }
   #search_listing .btn-primary{
-      margin-top:20px
+    margin-top:20px;
+    background-color: #E23744;
+    border-color: #E23744;
   }
   .search-header{
     margin-top:20px;
     text-align: center;
   }
+ 
