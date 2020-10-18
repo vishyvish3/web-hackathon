@@ -34,6 +34,7 @@ form.example input[type=text] {
       background-image: url('../img/header_bg.jpg');
       min-height: 500px;
       background-repeat: no-repeat;
+      background-size: cover;
   }
   #logo_div{
       margin-top:100px;
