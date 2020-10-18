@@ -109,6 +109,7 @@
             row.append(col);
          }
       }else{
+        document.getElementById("body-banner").style.display = "none";
         let row = document.querySelector('#search_listing');
         row.innerHTML = '';
 
