@@ -56,10 +56,10 @@
         //console.log(data); 
         let row = document.querySelector('#search_listing');
         row.innerHTML = '';
-        let h3 = document.createElement("h2");
-        h3.setAttribute("class","search-header")
-        h3.innerHTML = "Search Result";
-        row.append(h3);
+        let h2 = document.createElement("h2");
+        h2.setAttribute("class","search-header")
+        h2.innerHTML = "Search Result";
+        row.append(h2);
 
         //if the search keyword has results
         if(data['results_shown'] > 0){
